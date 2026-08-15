@@ -164,6 +164,19 @@ export default function ProjectDetailPage() {
               </Card>
             )}
 
+            {/* DESIGN GAP SECTION */}
+            {project.designGap && (
+              <Card className="space-y-4 border-l-4 border-l-amber-500">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] flex items-center gap-2">
+                  <Layers size={20} className="text-amber-500" />
+                  Design Gap &amp; Need for v2.0
+                </h3>
+                <TextBlock variant="body">
+                  {project.designGap}
+                </TextBlock>
+              </Card>
+            )}
+
             {/* VERSION COMPARISON (COLLABOWRITE) */}
             {project.versionComparison && (
               <Card className="space-y-4 border-l-4 border-l-[var(--accent)]">

@@ -19,6 +19,7 @@ export interface ProjectItem {
   deployedUrl?: string;
   features?: string[];
   versionComparison?: string;
+  designGap?: string;
   researchNote?: string;
 }
 
@@ -191,7 +192,7 @@ export const projectsData: ProjectItem[] = [
     description: "CollaboWrite 2.0 was architected for remote writing teams and content creators who require real-time collaborative editing paired with Git-like document branching. Designed with a dual-frontend architecture separating reader and writer experiences, it provides auth-gated interactions, granular branch management, and live engagement metrics.",
     tags: ["React", "Vite", "Node.js", "Express", "MongoDB", "Prisma"],
     status: "Completed",
-    githubUrl: "https://github.com/shetty051/CollaboWrite",
+    githubUrl: "https://github.com/shetty051/CollaboWrite_2.0",
     deployedUrl: "https://collabo-write-2-0.vercel.app/",
     metrics: "Real-time sync & branch merging across parallel sessions",
     features: [
@@ -200,7 +201,7 @@ export const projectsData: ProjectItem[] = [
       "Protected reader and writer experiences with auth-gated interaction modes",
       "Interactive social ecosystem with commenting, rating, and author follow systems",
     ],
-    versionComparison: "CollaboWrite 2.0 completely reimagines v1.0 by transitioning from a single monolithic frontend to a decoupled dual-frontend architecture (reader vs writer). It introduces Git-style story branching, live analytical telemetry, and Prisma ORM for relational query optimization over initial flat document stores.",
+    versionComparison: "CollaboWrite 2.0 introduces a dedicated guest landing page, solving v1.0's primary friction point where visitors were forced to log in before browsing content. By enabling guest readers to explore stories freely without upfront account commitments, v2.0 significantly lowers user onboarding friction while reserving authentication for active writing, branching, and feedback interactions.",
   },
   {
     id: "trackmyhabits",
@@ -248,9 +249,10 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     summary: "The initial prototype of CollaboWrite establishing collaborative online story creation and community feedback loops.",
     description: "CollaboWrite 1.0 laid the groundwork for collaborative online writing, featuring real-time story submissions, user commenting, and community voting engines built on React and Node.js.",
+    designGap: "In CollaboWrite 1.0, visitors were immediately blocked by a mandatory authentication wall, requiring full registration before exploring any community stories. This lack of a guest landing page created high onboarding friction and drop-off, directly inspiring the open, guest-first architecture engineered in CollaboWrite 2.0.",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     status: "Completed",
-    githubUrl: "https://github.com/shetty051/CollaboWrite-1.0",
+    githubUrl: "https://github.com/shetty051/CollaboWrite",
     deployedUrl: "https://collabo-write-five.vercel.app/",
     features: [
       "Shared community story creation canvas",
@@ -268,7 +270,7 @@ export const projectsData: ProjectItem[] = [
     description: "HoldemHub brings the strategic depth of Texas Hold'em poker to the web with an interactive table UI, automated hand evaluation algorithms, pot splitting rules, and smooth turn management.",
     tags: ["React", "JavaScript", "Tailwind CSS", "Web Sockets"],
     status: "Completed",
-    githubUrl: "https://github.com/shetty051/HoldemHub",
+    githubUrl: "https://github.com/shetty051/Hold-em_Hub",
     deployedUrl: "https://hold-em-hub.vercel.app/",
     features: [
       "Real-time Texas Hold'em poker hand strength evaluator",
@@ -295,12 +297,12 @@ export const aiProjectsData: AiProjectItem[] = [
     ],
     links: [
       {
-        label: "Blog: The Sign of the Burnt Petals",
-        url: "https://thesignoftheburntpetals.wordpress.com/",
+        label: "The sign of the burnt petals",
+        url: "https://amzn.in/d/09k3AzXw",
       },
       {
         label: "Notion Press Author Profile",
-        url: "https://notionpress.com",
+        url: "https://notionpress.com/author/1051722",
       },
     ],
   },
@@ -325,8 +327,8 @@ export const aiProjectsData: AiProjectItem[] = [
         url: "https://www.youtube.com/@AakashShetty-qy9tb",
       },
       {
-        label: "Toastmasters Member Profile",
-        url: "https://www.toastmasters.org",
+        label: "Instagram Profile",
+        url: "https://www.instagram.com/aakashb_shetty/",
       },
     ],
   },
@@ -405,19 +407,5 @@ export const educationData: EducationItem[] = [
       "Deep Learning",
     ],
     details: "Specializing in Artificial Intelligence and Machine Learning applications, full-stack web engineering, and relational database systems.",
-  },
-  {
-    degree: "PUC (Pre-University Course)",
-    institution: "BGS PU College",
-    location: "Mysuru, Karnataka",
-    period: "2021 – 2023",
-    details: "Completed Pre-University education focusing on Physics, Chemistry, Mathematics, and Computer Science.",
-  },
-  {
-    degree: "Secondary School Education (10th Grade)",
-    institution: "Mysore West Lions Sevaniketan School",
-    location: "Mysuru, Karnataka",
-    period: "2012 – 2021",
-    details: "Foundational academic schooling with active involvement in technical science projects and computer fundamentals.",
   },
 ];

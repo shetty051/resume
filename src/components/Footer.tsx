@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-[var(--text-secondary)] font-medium">
+        <div className="flex flex-wrap items-center gap-8 text-xs uppercase tracking-widest text-[var(--text-secondary)] font-medium">
           <a
             href={studioConfig.github}
             target="_blank"
@@ -33,14 +33,6 @@ export const Footer: React.FC = () => {
             className="hover:text-[var(--accent)] transition-colors"
           >
             LinkedIn
-          </a>
-          <a
-            href={studioConfig.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[var(--accent)] transition-colors"
-          >
-            Twitter
           </a>
           <Link
             href="/contact"

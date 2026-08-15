@@ -75,7 +75,11 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
                   <span className="text-[var(--accent)] font-bold">🧠</span>
-                  <span>Strong foundation in DSA (90%), RDBMS design (90%), and C++ (90%)</span>
+                  <span>Strong foundation in DSA, RDBMS design, and C++</span>
+                </li>
+                <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
+                  <span className="text-[var(--accent)] font-bold">🤖</span>
+                  <span>Curious about rapidly evolving AI tech</span>
                 </li>
                 <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
                   <span className="text-[var(--accent)] font-bold">🤝</span>
@@ -85,7 +89,20 @@ export default function HomePage() {
             </div>
 
             <div className="pt-4 border-t border-[var(--border-subtle)]">
-              <Button href="#skills" variant="ghost" size="sm" className="w-full justify-between">
+              <Button
+                href="#skills"
+                variant="ghost"
+                size="sm"
+                className="w-full justify-between"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("skills");
+                  if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }
+                }}
+              >
                 <span>View Skill Breakdown</span>
                 <ArrowUpRight size={14} />
               </Button>

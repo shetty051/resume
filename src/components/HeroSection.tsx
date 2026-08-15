@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/Button";
 import { TextBlock } from "@/components/TextBlock";
 import { studioConfig } from "@/config/studio";
-import { ArrowDown, Sparkles, Send } from "lucide-react";
+import { ArrowDown, Sparkles, Send, FileText } from "lucide-react";
+import { ResumeModal } from "@/components/ResumeModal";
 
 // Floating Skill badge definition
 interface FloatingSkill {
@@ -19,16 +20,18 @@ interface FloatingSkill {
 }
 
 const FLOATING_SKILLS: FloatingSkill[] = [
-  { name: "React", top: "18%", left: "12%", duration: 4.2, yOffset: -16, delay: 0 },
-  { name: "Next.js", top: "25%", left: "80%", duration: 3.8, yOffset: 14, delay: 0.5 },
-  { name: "Node.js", top: "62%", left: "8%", duration: 4.5, yOffset: -12, delay: 1.2 },
-  { name: "Python", top: "72%", left: "84%", duration: 3.6, yOffset: 18, delay: 0.8 },
-  { name: "JavaScript", top: "12%", left: "65%", duration: 4.0, yOffset: -14, delay: 1.5 },
-  { name: "MongoDB", top: "82%", left: "22%", duration: 4.8, yOffset: -15, delay: 0.3 },
-  { name: "Express", top: "78%", left: "68%", duration: 3.9, yOffset: 12, delay: 1.0 },
+  { name: "React", top: "24%", left: "12%", duration: 4.2, yOffset: -16, delay: 0 },
+  { name: "Next.js", top: "28%", left: "80%", duration: 3.8, yOffset: 14, delay: 0.5 },
+  { name: "Node.js", top: "64%", left: "8%", duration: 4.5, yOffset: -12, delay: 1.2 },
+  { name: "Python", top: "74%", left: "84%", duration: 3.6, yOffset: 18, delay: 0.8 },
+  { name: "JavaScript", top: "20%", left: "65%", duration: 4.0, yOffset: -14, delay: 1.5 },
+  { name: "MongoDB", top: "84%", left: "22%", duration: 4.8, yOffset: -15, delay: 0.3 },
+  { name: "Express", top: "80%", left: "68%", duration: 3.9, yOffset: 12, delay: 1.0 },
 ];
 
 export const HeroSection: React.FC = () => {
+  const [resumeModalOpen, setResumeModalOpen] = React.useState(false);
+
   return (
     <section
       id="home"
@@ -68,7 +71,7 @@ export const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-medium text-[var(--text-muted)] border-b border-[var(--border-subtle)] pb-6"
+        className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-medium text-[var(--text-muted)] border-b border-[var(--border-subtle)] pb-6 -mt-4 mb-4 sm:-mt-6 sm:mb-6"
       >
         {/* Left Side Refined Tag */}
         <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
@@ -129,7 +132,7 @@ export const HeroSection: React.FC = () => {
           className="space-y-3 max-w-3xl"
         >
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[var(--text-primary)] leading-[1.05]">
-            Hi I&apos;m <span className="text-[var(--text-primary)]">Aakash</span>
+            Aakash B Shetty
           </h1>
 
           <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-[var(--accent)] tracking-normal font-normal">
@@ -137,23 +140,39 @@ export const HeroSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* GET IN TOUCH BUTTON */}
+        {/* GET IN TOUCH & RESUME BUTTONS */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="pt-4"
+          className="pt-4 flex flex-col sm:flex-row items-center gap-4"
         >
           <Button
             href="/contact"
             variant="primary"
             size="lg"
-            className="gap-2.5 px-9 py-4 text-sm font-semibold tracking-wider shadow-lg hover:shadow-xl hover:bg-[var(--accent)] transition-all duration-300"
+            className="gap-2.5 px-9 py-4 text-sm font-semibold tracking-wider shadow-lg hover:shadow-xl hover:bg-[var(--accent)] transition-all duration-300 w-full sm:w-auto"
           >
             <span>Get in Touch</span>
             <Send size={16} />
           </Button>
+
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => setResumeModalOpen(true)}
+            className="gap-2.5 px-9 py-4 text-sm font-semibold tracking-wider shadow-md hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300 w-full sm:w-auto"
+          >
+            <FileText size={16} />
+            <span>Download Resume</span>
+          </Button>
         </motion.div>
+
+        {/* RESUME MODAL */}
+        <ResumeModal
+          isOpen={resumeModalOpen}
+          onClose={() => setResumeModalOpen(false)}
+        />
       </div>
 
       {/* BOTTOM SCROLL INDICATOR */}

@@ -2,83 +2,107 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { SectionContainer } from "@/components/SectionContainer";
-import { Card } from "@/components/Card";
-import { skillsData, SkillCategory } from "@/config/studio";
-import { Code, Layout, Server, Database, Terminal, Cpu } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
-// Map category iconName string to Lucide icon components
-const CATEGORY_ICONS = {
-  code: Code,
-  layout: Layout,
-  server: Server,
-  database: Database,
-  terminal: Terminal,
-  cpu: Cpu,
-};
+const SKILLS_LIST = [
+  "C++",
+  "Python",
+  "C",
+  "JavaScript / TypeScript",
+  "React",
+  "Next.js",
+  "Vite",
+  "HTML",
+  "CSS",
+  "Node.js",
+  "Express",
+  "NestJS",
+  "Flask",
+  "Prisma",
+  "MongoDB",
+  "PostgreSQL",
+  "MySQL",
+  "Docker",
+  "Git",
+  "Data Structures & Algorithms",
+  "Object-Oriented Programming",
+  "RDBMS Design",
+];
 
 export const SkillsSection: React.FC = () => {
+  // Multiply list to create seamless infinite loop
+  const duplicatedSkills = [...SKILLS_LIST, ...SKILLS_LIST];
+
   return (
-    <SectionContainer
+    <section
       id="skills"
-      scriptAccent="Technical Mastery"
-      subtitle="Proficiency & Tooling"
-      title="Skills & Expertise"
+      className="py-16 md:py-24 border-y border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden relative select-none"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {skillsData.map((category: SkillCategory, catIdx: number) => {
-          const IconComponent = CATEGORY_ICONS[category.iconName] || Code;
 
-          return (
-            <Card
-              key={category.title}
-              hoverEffect={true}
-              className="flex flex-col justify-between space-y-6"
-            >
-              {/* CATEGORY HEADER */}
-              <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
-                <div className="p-2.5 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--accent)]">
-                  <IconComponent size={20} />
-                </div>
-                <h3 className="font-bold text-lg text-[var(--text-primary)] tracking-tight">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* SKILLS LIST WITH ANIMATED PROGRESS BARS */}
-              <div className="space-y-5 flex-1">
-                {category.skills.map((skill, skillIdx) => (
-                  <div key={skill.name} className="space-y-2 group">
-                    <div className="flex justify-between items-center text-xs font-semibold">
-                      <span className="text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
-                        {skill.name}
-                      </span>
-                      <span className="font-mono text-[var(--text-muted)] group-hover:text-[var(--text-primary)] transition-colors">
-                        {skill.level}%
-                      </span>
-                    </div>
-
-                    {/* PROGRESS BAR CONTAINER */}
-                    <div className="h-2 w-full bg-[var(--bg-secondary)] rounded-full overflow-hidden p-0.5 border border-[var(--border-subtle)]">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true, margin: "-30px" }}
-                        transition={{
-                          duration: 1.6,
-                          ease: [0.16, 1, 0.3, 1], // Smooth ease-out
-                          delay: catIdx * 0.1 + skillIdx * 0.08,
-                        }}
-                        className="h-full rounded-full bg-gradient-to-r from-[var(--text-primary)] via-[var(--accent)] to-[var(--accent)] shadow-sm transition-all group-hover:brightness-110"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          );
-        })}
+      {/* HEADER LABEL */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Sparkles size={16} className="text-[var(--accent)]" />
+          <span className="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold font-mono">
+            Core Tooling & Technologies
+          </span>
+        </div>
+        <div className="h-[1px] flex-1 max-w-xs bg-[var(--border-subtle)] hidden sm:block" />
       </div>
-    </SectionContainer>
+
+      {/* CONTINUOUS TICKER ROW 1 (MOVING LEFT) */}
+      <div className="flex overflow-hidden py-4">
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            ease: "linear",
+            duration: 35,
+            repeat: Infinity,
+          }}
+          className="flex items-center gap-6 sm:gap-10 shrink-0 whitespace-nowrap"
+        >
+          {duplicatedSkills.map((skill, index) => (
+            <div
+              key={`row1-${index}`}
+              className="group relative cursor-pointer px-5 py-2.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:shadow-[0_0_20px_rgba(139,62,47,0.25)] hover:-translate-y-0.5"
+            >
+              <span className="font-serif italic font-bold text-xl sm:text-2xl md:text-3xl text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300">
+                {skill}
+              </span>
+              <span className="ml-6 sm:ml-10 text-[var(--accent)]/40 font-normal group-hover:text-[var(--accent)] transition-colors">
+                ✦
+              </span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* CONTINUOUS TICKER ROW 2 (MOVING RIGHT FOR DYNAMIC CONTRAST) */}
+      <div className="flex overflow-hidden py-4 mt-2">
+        <motion.div
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{
+            ease: "linear",
+            duration: 40,
+            repeat: Infinity,
+          }}
+          className="flex items-center gap-6 sm:gap-10 shrink-0 whitespace-nowrap"
+        >
+          {duplicatedSkills.map((skill, index) => (
+            <div
+              key={`row2-${index}`}
+              className="group relative cursor-pointer px-5 py-2.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:shadow-[0_0_20px_rgba(139,62,47,0.25)] hover:-translate-y-0.5"
+            >
+              <span className="font-serif italic font-medium text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300">
+                {skill}
+              </span>
+              <span className="ml-6 sm:ml-10 text-[var(--text-muted)]/40 font-normal group-hover:text-[var(--accent)] transition-colors">
+                •
+              </span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 };

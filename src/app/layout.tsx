@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const serifFont = Cormorant_Garamond({
   variable: "--font-serif",
@@ -19,8 +20,48 @@ const sansFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Alexander Vance — Digital Artisan Studio",
-  description: "Editorial resume and portfolio of Alexander Vance, Creative Technologist and Lead UI Engineer.",
+  metadataBase: new URL("https://aakashshetty.dev"),
+  title: "Aakash B Shetty | Software Developer",
+  description:
+    "Portfolio of Aakash B Shetty - Full-stack developer. Explore featured projects, engineering achievements, and technical skills.",
+  keywords: [
+    "Aakash B Shetty",
+    "Software Developer",
+    "Full-Stack Engineer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "AI Integration",
+    "Portfolio",
+  ],
+  authors: [{ name: "Aakash B Shetty" }],
+  openGraph: {
+    title: "Aakash B Shetty | Software Developer",
+    description:
+      "Portfolio of Aakash B Shetty - Full-stack developer. Explore featured projects, engineering achievements, and technical skills.",
+    url: "https://aakashshetty.dev",
+    siteName: "Aakash B Shetty Portfolio",
+    images: [
+      {
+        url: "/profile.png",
+        width: 800,
+        height: 800,
+        alt: "Aakash B Shetty Profile",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aakash B Shetty | Software Developer",
+    description:
+      "Portfolio of Aakash B Shetty - Full-stack developer. Explore featured projects, engineering achievements, and technical skills.",
+    images: ["/profile.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +76,7 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased min-h-screen flex flex-col selection:bg-[var(--accent)] selection:text-white">
         <ThemeProvider>
+          <ScrollProgress />
           <Navbar />
           <main className="flex-1 pt-20">{children}</main>
           <Footer />

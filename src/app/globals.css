@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F9F8F6;
+    --bg-secondary: #F0EEE9;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --text-primary: #141413;
+    --text-secondary: #52504C;
+    --text-muted: #8C8983;
+    --accent: #8B3E2F;
+    --accent-glow: rgba(139, 62, 47, 0.15);
+    --accent-indigo: #2D3A4E;
+    --border-subtle: rgba(20, 20, 19, 0.08);
+    --border-strong: rgba(20, 20, 19, 0.16);
+    --shadow-soft: 0 10px 30px -10px rgba(20, 20, 19, 0.05);
+    --shadow-layered: 0 20px 40px -15px rgba(20, 20, 19, 0.08), 0 0 0 1px rgba(20, 20, 19, 0.04);
+  }
+
+  .dark {
+    --bg-primary: #0C0C0D;
+    --bg-secondary: #141416;
+    --bg-card: rgba(22, 22, 26, 0.75);
+    --bg-card-hover: rgba(30, 30, 36, 0.9);
+    --text-primary: #F4F4F5;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --accent: #E07A5F;
+    --accent-glow: rgba(224, 122, 95, 0.2);
+    --accent-indigo: #818CF8;
+    --border-subtle: rgba(244, 244, 245, 0.09);
+    --border-strong: rgba(244, 244, 245, 0.18);
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --shadow-layered: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+  opacity: 0.5;
+}

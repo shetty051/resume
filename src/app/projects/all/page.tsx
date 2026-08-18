@@ -34,25 +34,25 @@ export default function AllProjectsPage() {
               onClick={() => router.push(`/projects/${project.id}`)}
               className="block h-full cursor-pointer group focus:outline-none"
             >
-              <Card className="h-full flex flex-col justify-between border-[var(--border-subtle)] hover:border-[var(--accent)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] group-hover:-translate-y-1.5 group-hover:shadow-xl">
+              <Card className="h-full flex flex-col justify-between border-[var(--border-subtle)] hover:border-[var(--accent)] bg-[var(--bg-card)] transition-all duration-200 group">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--accent)]">
+                    <span className="text-[10px] font-mono uppercase font-bold tracking-widest px-2 py-0.5 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)]">
                       {project.category}
                     </span>
 
                     {project.status === "Under Construction" ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">
                         <Construction size={11} />
                         <span>Under Construction</span>
                       </span>
                     ) : project.status === "In Development" ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30">
                         <Clock size={11} />
                         <span>In Dev</span>
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
                         <CheckCircle2 size={11} />
                         <span>Completed</span>
                       </span>

@@ -30,12 +30,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="relative w-full max-w-md bg-[var(--bg-card)] border border-[var(--border-strong)] rounded-3xl p-6 sm:p-8 shadow-[var(--shadow-layered)] z-10 space-y-6"
+            className="relative w-full max-w-md bg-[var(--bg-primary)] border border-[var(--border-strong)] p-6 sm:p-8 z-10 space-y-6"
           >
             {/* CLOSE BUTTON */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[var(--border-strong)] transition-all cursor-pointer"
+              className="absolute top-5 right-5 p-2 border border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[var(--border-strong)] transition-all cursor-pointer"
               aria-label="Close modal"
             >
               <X size={16} />
@@ -43,8 +43,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             {/* HEADER ICON & TITLE */}
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)] flex items-center justify-center shadow-sm">
-                <FileText size={24} />
+              <div className="w-10 h-10 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--accent)] flex items-center justify-center">
+                <FileText size={20} />
               </div>
 
               <div className="space-y-1">

@@ -59,18 +59,18 @@ export const SkillsSection: React.FC = () => {
             duration: 35,
             repeat: Infinity,
           }}
-          className="flex items-center gap-6 sm:gap-10 shrink-0 whitespace-nowrap"
+          className="flex items-center gap-4 sm:gap-8 shrink-0 whitespace-nowrap"
         >
           {duplicatedSkills.map((skill, index) => (
             <div
               key={`row1-${index}`}
-              className="group relative cursor-pointer px-5 py-2.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:shadow-[0_0_20px_rgba(139,62,47,0.25)] hover:-translate-y-0.5"
+              className="group relative cursor-pointer px-4 py-2 bg-[var(--bg-primary)] border border-[var(--border-subtle)] transition-all duration-200 hover:border-[var(--accent)]"
             >
-              <span className="font-serif italic font-bold text-xl sm:text-2xl md:text-3xl text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300">
+              <span className="font-display font-bold text-lg sm:text-xl md:text-2xl text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase tracking-tight">
                 {skill}
               </span>
-              <span className="ml-6 sm:ml-10 text-[var(--accent)]/40 font-normal group-hover:text-[var(--accent)] transition-colors">
-                ✦
+              <span className="ml-4 sm:ml-6 text-[var(--accent)] font-mono text-xs">
+                /
               </span>
             </div>
           ))}
@@ -78,7 +78,7 @@ export const SkillsSection: React.FC = () => {
       </div>
 
       {/* CONTINUOUS TICKER ROW 2 (MOVING RIGHT FOR DYNAMIC CONTRAST) */}
-      <div className="flex overflow-hidden py-4 mt-2">
+      <div className="flex overflow-hidden py-4 mt-1">
         <motion.div
           animate={{ x: ["-50%", "0%"] }}
           transition={{
@@ -86,18 +86,18 @@ export const SkillsSection: React.FC = () => {
             duration: 40,
             repeat: Infinity,
           }}
-          className="flex items-center gap-6 sm:gap-10 shrink-0 whitespace-nowrap"
+          className="flex items-center gap-4 sm:gap-8 shrink-0 whitespace-nowrap"
         >
           {duplicatedSkills.map((skill, index) => (
             <div
               key={`row2-${index}`}
-              className="group relative cursor-pointer px-5 py-2.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-[var(--shadow-soft)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:shadow-[0_0_20px_rgba(139,62,47,0.25)] hover:-translate-y-0.5"
+              className="group relative cursor-pointer px-4 py-2 bg-[var(--bg-primary)] border border-[var(--border-subtle)] transition-all duration-200 hover:border-[var(--accent)]"
             >
-              <span className="font-serif italic font-medium text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300">
+              <span className="font-display font-medium text-base sm:text-lg md:text-xl text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase tracking-tight">
                 {skill}
               </span>
-              <span className="ml-6 sm:ml-10 text-[var(--text-muted)]/40 font-normal group-hover:text-[var(--accent)] transition-colors">
-                •
+              <span className="ml-4 sm:ml-6 text-[var(--text-muted)] font-mono text-xs">
+                —
               </span>
             </div>
           ))}

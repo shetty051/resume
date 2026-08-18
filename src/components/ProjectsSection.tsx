@@ -35,43 +35,40 @@ export const ProjectsSection: React.FC = () => {
               onClick={() => router.push(`/projects/${project.id}`)}
               className="block h-full cursor-pointer group focus:outline-none"
             >
-              <Card className="h-full flex flex-col justify-between overflow-hidden border-[var(--border-subtle)] hover:border-[var(--accent)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] group-hover:-translate-y-1.5 group-hover:shadow-xl">
+              <Card className="h-full flex flex-col justify-between border-[var(--border-subtle)] hover:border-[var(--accent)] bg-[var(--bg-card)] transition-all duration-200 group">
                 {/* CARD TOP CONTAINER */}
                 <div className="space-y-5">
-                  {/* SUBTLE PLACEHOLDER COVER HEADER */}
-                  <div className="relative h-36 rounded-xl overflow-hidden bg-gradient-to-br from-[var(--bg-secondary)] via-[var(--bg-primary)] to-[var(--bg-secondary)] border border-[var(--border-subtle)] p-4 flex flex-col justify-between group-hover:scale-[1.02] transition-transform duration-500">
-                    {/* Atmospheric Glow */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--accent)]/10 rounded-full blur-2xl group-hover:bg-[var(--accent)]/25 transition-colors" />
-
+                  {/* SOLID ARCHITECTURAL HEADER PANEL */}
+                  <div className="relative h-32 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-4 flex flex-col justify-between transition-colors">
                     {/* STATUS & CATEGORY BADGES */}
                     <div className="flex justify-between items-start z-10">
-                      <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full bg-[var(--bg-primary)]/90 backdrop-blur-md border border-[var(--border-subtle)] text-[var(--accent)] shadow-sm">
+                      <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)]">
                         {project.category}
                       </span>
 
                       {/* STATUS BADGE */}
                       {project.status === "Under Construction" ? (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400">
                           <Construction size={12} />
                           <span>Under Construction</span>
                         </span>
                       ) : project.status === "In Development" ? (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-600 dark:text-indigo-400">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-indigo-500/10 border border-indigo-500/30 text-indigo-600 dark:text-indigo-400">
                           <Clock size={12} />
                           <span>In Development</span>
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
                           <CheckCircle2 size={12} />
                           <span>Completed</span>
                         </span>
                       )}
                     </div>
 
-                    {/* THUMBNAIL LOGO ACCENT */}
+                    {/* THUMBNAIL MONOGRAM ACCENT */}
                     <div className="flex justify-between items-end z-10">
-                      <span className="text-xl font-bold font-serif italic text-[var(--text-primary)]">
-                        {project.title.slice(0, 2)}
+                      <span className="text-2xl font-display font-extrabold text-[var(--text-primary)] tracking-tight">
+                        {project.title.slice(0, 2).toUpperCase()}
                       </span>
                       <span className="text-[11px] font-mono font-semibold text-[var(--text-muted)]">
                         {project.year}

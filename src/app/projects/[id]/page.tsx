@@ -156,7 +156,7 @@ export default function ProjectDetailPage() {
                       key={idx}
                       className="p-4 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-sm text-[var(--text-secondary)] font-medium leading-relaxed flex items-start gap-3"
                     >
-                      <span className="text-[var(--accent)] font-bold text-base">✦</span>
+                      <Sparkles size={14} className="text-[var(--accent)] shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}

@@ -21,68 +21,69 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <HeroSection />
 
-      {/* ABOUT SECTION */}
+      {/* ABOUT SECTION - CONFIDENT ASYMMETRICAL LAYOUT */}
       <SectionContainer
         id="about"
         scriptAccent="Human Touch & Technical Depth"
         subtitle="Developer Profile"
         title="About Me"
-        className="bg-[var(--bg-secondary)]/30 rounded-3xl border border-[var(--border-subtle)] my-12"
+        className="my-16"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          <Card className="lg:col-span-8 flex flex-col justify-between space-y-6 bg-[var(--bg-card)]">
-            <div className="space-y-4">
-              <TextBlock variant="lead" className="text-lg md:text-xl font-medium text-[var(--text-primary)]">
-                Hi, I&apos;m <span className="font-bold text-[var(--accent)]">Aakash B Shetty</span> — a software engineer who believes that great code should be fast, maintainable, and actually fun to use.
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch border-t border-[var(--border-subtle)] pt-8">
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+            <div className="space-y-6">
+              <TextBlock variant="lead" className="text-xl md:text-2xl font-display font-bold text-[var(--text-primary)] leading-tight">
+                Hi, I&apos;m <span className="text-[var(--accent)] underline decoration-2 underline-offset-4">Aakash B Shetty</span> — a software engineer who believes that great code should be fast, maintainable, and actually fun to use.
               </TextBlock>
 
-              <TextBlock variant="body" className="text-sm md:text-base leading-relaxed">
-                I spend my days architecting full-stack applications and experimenting with AI integrations. Whether I&apos;m building collaborative platforms like <span className="font-semibold text-[var(--text-primary)]">CollaboWrite</span> or crafting habit analytics engines like <span className="font-semibold text-[var(--text-primary)]">TrackMyHabits</span>, I focus on shipping end-to-end solutions that solve real human problems without unnecessary fluff.
+              <TextBlock variant="body" className="text-sm md:text-base leading-relaxed text-[var(--text-secondary)]">
+                I spend my days architecting full-stack applications and experimenting with AI integrations. Whether I&apos;m building collaborative platforms like <strong className="text-[var(--text-primary)]">CollaboWrite</strong> or crafting habit analytics engines like <strong className="text-[var(--text-primary)]">TrackMyHabits</strong>, I focus on shipping end-to-end solutions that solve real human problems without unnecessary fluff.
               </TextBlock>
 
-              <TextBlock variant="body" className="text-sm md:text-base leading-relaxed">
+              <TextBlock variant="body" className="text-sm md:text-base leading-relaxed text-[var(--text-secondary)]">
                 My technical sweet spot spans C++, React, Next.js, Node.js, and RDBMS design. Beyond syntax and algorithms, I thrive in collaborative team environments where open dialogue, continuous learning, and thoughtful user experiences come together to create software that truly connects.
               </TextBlock>
             </div>
 
-            <div className="pt-6 border-t border-[var(--border-subtle)] grid grid-cols-3 gap-4">
+            {/* METRIC NUMERAL HORIZONTAL ROW */}
+            <div className="pt-6 border-t border-[var(--border-subtle)] grid grid-cols-3 gap-4 font-mono">
               <div>
-                <span className="text-xl md:text-2xl font-black text-[var(--text-primary)]">Full-Stack</span>
-                <p className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-semibold mt-1">End-to-End Delivery</p>
+                <span className="text-2xl md:text-3xl font-display font-extrabold text-[var(--text-primary)]">01.</span>
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] font-bold mt-1">Full-Stack Delivery</p>
               </div>
               <div>
-                <span className="text-xl md:text-2xl font-black text-[var(--text-primary)]">AI + UI</span>
-                <p className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-semibold mt-1">Smart Integration</p>
+                <span className="text-2xl md:text-3xl font-display font-extrabold text-[var(--text-primary)]">02.</span>
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] font-bold mt-1">AI + UI Engineering</p>
               </div>
               <div>
-                <span className="text-xl md:text-2xl font-black text-[var(--text-primary)]">Clean CS</span>
-                <p className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-semibold mt-1">Core Fundamentals</p>
+                <span className="text-2xl md:text-3xl font-display font-extrabold text-[var(--text-primary)]">03.</span>
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] font-bold mt-1">CS Fundamentals</p>
               </div>
             </div>
-          </Card>
+          </div>
 
-          <Card className="lg:col-span-4 space-y-6 bg-gradient-to-br from-[var(--bg-card)] to-[var(--bg-secondary)] flex flex-col justify-between">
+          <div className="lg:col-span-5 border border-[var(--border-strong)] bg-[var(--bg-secondary)] p-6 md:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-6">
-              <div className="flex items-center gap-3 text-[var(--accent)]">
-                <Code2 size={20} />
-                <h3 className="font-bold text-lg text-[var(--text-primary)]">Core Highlights</h3>
+              <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
+                <Code2 size={18} className="text-[var(--accent)]" />
+                <h3 className="font-display font-bold text-lg text-[var(--text-primary)] uppercase tracking-tight">Core Highlights</h3>
               </div>
 
-              <ul className="space-y-3 text-xs font-medium text-[var(--text-secondary)]">
-                <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
-                  <span className="text-[var(--accent)] font-bold">⚡</span>
+              <ul className="space-y-4 text-xs font-mono text-[var(--text-secondary)]">
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--accent)] font-bold">—</span>
                   <span>Engineered production-ready apps like <strong>CollaboWrite</strong> &amp; <strong>TrackMyHabits</strong></span>
                 </li>
-                <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
-                  <span className="text-[var(--accent)] font-bold">🧠</span>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--accent)] font-bold">—</span>
                   <span>Strong foundation in DSA, RDBMS design, and C++</span>
                 </li>
-                <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
-                  <span className="text-[var(--accent)] font-bold">🤖</span>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--accent)] font-bold">—</span>
                   <span>Curious about rapidly evolving AI tech</span>
                 </li>
-                <li className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[var(--bg-primary)]/80 border border-[var(--border-subtle)]">
-                  <span className="text-[var(--accent)] font-bold">🤝</span>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--accent)] font-bold">—</span>
                   <span>Enthusiastic about cross-functional teamwork, code reviews &amp; modern UI craft</span>
                 </li>
               </ul>
@@ -107,7 +108,7 @@ export default function HomePage() {
                 <ArrowUpRight size={14} />
               </Button>
             </div>
-          </Card>
+          </div>
         </div>
       </SectionContainer>
 

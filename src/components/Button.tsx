@@ -19,11 +19,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+      "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[var(--accent)] disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
 
     const variants = {
       primary:
-        "bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-[var(--accent)] hover:text-white shadow-md hover:shadow-lg",
+        "bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-[var(--accent)] hover:text-white border border-transparent",
       secondary:
         "bg-[var(--bg-secondary)] text-[var(--text-primary)] border border-[var(--border-strong)] hover:border-[var(--accent)] hover:text-[var(--accent)]",
       ghost:
@@ -31,9 +31,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizes = {
-      sm: "px-4 py-1.5 text-xs tracking-wider uppercase",
-      md: "px-6 py-2.5 text-sm tracking-wide",
-      lg: "px-8 py-3.5 text-base tracking-wide font-semibold",
+      sm: "px-4 py-2 text-xs tracking-wider uppercase font-mono",
+      md: "px-6 py-2.5 text-xs tracking-wider uppercase font-mono",
+      lg: "px-8 py-3 text-sm tracking-wider uppercase font-mono",
     };
 
     const combinedClassName = cn(

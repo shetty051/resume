@@ -90,10 +90,10 @@ export const Navbar: React.FC = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-[var(--bg-primary)]/85 backdrop-blur-xl border-b border-[var(--border-subtle)] shadow-[var(--shadow-soft)] py-3"
-            : "bg-[var(--bg-primary)]/60 backdrop-blur-md border-b border-transparent py-5"
+            ? "bg-[var(--bg-primary)] border-b border-[var(--border-strong)] py-3"
+            : "bg-[var(--bg-primary)]/90 border-b border-[var(--border-subtle)] py-4"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
@@ -103,18 +103,18 @@ export const Navbar: React.FC = () => {
             onClick={(e) => handleNavClick(e, "home")}
             className="group flex items-center gap-3 cursor-pointer"
           >
-            <div className="w-9 h-9 rounded-full bg-[var(--text-primary)] text-[var(--bg-primary)] flex items-center justify-center font-black text-sm tracking-tighter group-hover:bg-[var(--accent)] group-hover:text-white transition-all duration-300 shadow-sm">
-              A
+            <div className="w-8 h-8 bg-[var(--text-primary)] text-[var(--bg-primary)] flex items-center justify-center font-mono font-bold text-xs tracking-tighter group-hover:bg-[var(--accent)] group-hover:text-white transition-all duration-200">
+              AS
             </div>
             <div className="flex flex-col">
-              <span className="font-serif italic font-bold text-xl md:text-2xl tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+              <span className="font-display font-extrabold text-lg md:text-xl tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors uppercase">
                 Aakash
               </span>
             </div>
           </Link>
 
           {/* DESKTOP TABS */}
-          <nav className="hidden md:flex items-center gap-1 bg-[var(--bg-secondary)]/70 p-1.5 rounded-full border border-[var(--border-subtle)] backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-1 border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 p-1">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id && pathname === "/";
               return (
@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.id)}
                   className={cn(
-                    "relative px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 rounded-full cursor-pointer select-none",
+                    "relative px-4 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer select-none",
                     isActive
                       ? "text-[var(--bg-primary)]"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -132,8 +132,8 @@ export const Navbar: React.FC = () => {
                   {isActive && (
                     <motion.div
                       layoutId="activeTabPill"
-                      className="absolute inset-0 bg-[var(--text-primary)] rounded-full -z-10"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      className="absolute inset-0 bg-[var(--text-primary)] -z-10"
+                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
                     />
                   )}
                   {item.label}
@@ -144,13 +144,12 @@ export const Navbar: React.FC = () => {
 
           {/* RIGHT SIDE ACTION BUTTONS */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Dark / Light Mode Toggle */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2.5 rounded-full border border-[var(--border-subtle)] hover:border-[var(--border-strong)] bg-[var(--bg-card)] text-[var(--text-primary)] hover:text-[var(--accent)] transition-all cursor-pointer shadow-sm"
+              className="p-2 border border-[var(--border-subtle)] hover:border-[var(--border-strong)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:text-[var(--accent)] transition-all cursor-pointer"
             >
               {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
             </motion.button>

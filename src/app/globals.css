@@ -1,38 +1,55 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
 @layer base {
   :root {
-    --bg-primary: #F9F8F6;
-    --bg-secondary: #F0EEE9;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --bg-card-hover: rgba(255, 255, 255, 0.98);
-    --text-primary: #141413;
-    --text-secondary: #52504C;
-    --text-muted: #8C8983;
-    --accent: #8B3E2F;
-    --accent-glow: rgba(139, 62, 47, 0.15);
+    /* Retrained Architectural Palette - Light */
+    --bg-primary: #F7F5F0;
+    --bg-secondary: #EFECE6;
+    --bg-card: rgba(255, 255, 255, 0.7);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
+    
+    --text-primary: #121212;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    
+    /* Single Restrained Accent: Burnt Terracotta / Terracotta Ink */
+    --accent: #CC4425;
+    --accent-glow: rgba(204, 68, 37, 0.12);
     --accent-indigo: #2D3A4E;
-    --border-subtle: rgba(20, 20, 19, 0.08);
-    --border-strong: rgba(20, 20, 19, 0.16);
-    --shadow-soft: 0 10px 30px -10px rgba(20, 20, 19, 0.05);
-    --shadow-layered: 0 20px 40px -15px rgba(20, 20, 19, 0.08), 0 0 0 1px rgba(20, 20, 19, 0.04);
+    
+    --border-subtle: rgba(18, 18, 18, 0.08);
+    --border-strong: rgba(18, 18, 18, 0.18);
+    
+    --shadow-soft: 0 4px 20px -2px rgba(18, 18, 18, 0.04);
+    --shadow-layered: 0 12px 32px -8px rgba(18, 18, 18, 0.06), 0 0 0 1px rgba(18, 18, 18, 0.04);
   }
 
   .dark {
-    --bg-primary: #0C0C0D;
-    --bg-secondary: #141416;
-    --bg-card: rgba(22, 22, 26, 0.75);
-    --bg-card-hover: rgba(30, 30, 36, 0.9);
-    --text-primary: #F4F4F5;
-    --text-secondary: #A1A1AA;
-    --text-muted: #71717A;
-    --accent: #E07A5F;
-    --accent-glow: rgba(224, 122, 95, 0.2);
-    --accent-indigo: #818CF8;
-    --border-subtle: rgba(244, 244, 245, 0.09);
-    --border-strong: rgba(244, 244, 245, 0.18);
-    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    --shadow-layered: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    /* Retrained Architectural Palette - Dark Graphite */
+    --bg-primary: #0F0F11;
+    --bg-secondary: #17171A;
+    --bg-card: rgba(23, 23, 26, 0.7);
+    --bg-card-hover: rgba(30, 30, 35, 0.9);
+    
+    --text-primary: #F3F3F4;
+    --text-secondary: #A0A0A6;
+    --text-muted: #6E6E76;
+    
+    /* Single Restrained Accent: Terracotta */
+    --accent: #E65335;
+    --accent-glow: rgba(230, 83, 53, 0.15);
+    --accent-indigo: #E65335;
+    
+    --border-subtle: rgba(243, 243, 244, 0.08);
+    --border-strong: rgba(243, 243, 244, 0.16);
+    
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    --shadow-layered: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 }
 
@@ -43,20 +60,26 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+/* Custom minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--text-muted);
-  border-radius: 3px;
-  opacity: 0.5;
+  border-radius: 2px;
+  opacity: 0.4;
 }
+

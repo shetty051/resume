@@ -43,28 +43,28 @@ export const AiSection: React.FC = () => {
                 onClick={() => router.push(`/ai/${item.id}`)}
                 className="block h-full cursor-pointer group focus:outline-none"
               >
-                <Card className="h-full flex flex-col justify-between overflow-hidden border-[var(--border-subtle)] hover:border-[var(--accent-indigo)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] border-l-4 border-l-[var(--accent-indigo)] group-hover:-translate-y-1.5 group-hover:shadow-xl">
+                <Card className="h-full flex flex-col justify-between border-[var(--border-subtle)] hover:border-[var(--text-primary)] bg-[var(--bg-card)] transition-all duration-200 group border-l-2 border-l-[var(--accent)]">
                   <div className="space-y-5">
                     {/* CATEGORY & ICON HEADER */}
                     <div className="flex justify-between items-center pb-3 border-b border-[var(--border-subtle)]">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--accent-indigo)]">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--accent)]">
                         {item.category}
                       </span>
-                      <div className="p-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--accent-indigo)]">
+                      <div className="text-[var(--text-primary)]">
                         <CategoryIcon size={16} />
                       </div>
                     </div>
 
                     {/* TITLE & TAGLINE */}
                     <div className="space-y-1">
-                      <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-indigo)] transition-colors flex items-center justify-between">
+                      <h3 className="text-xl font-display font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors flex items-center justify-between">
                         <span>{item.title}</span>
                         <ArrowUpRight
                           size={18}
-                          className="text-[var(--text-muted)] group-hover:text-[var(--accent-indigo)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                          className="text-[var(--text-muted)] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
                         />
                       </h3>
-                      <TextBlock variant="script" className="text-sm">
+                      <TextBlock variant="script" className="text-xs text-[var(--text-muted)]">
                         {item.tagline}
                       </TextBlock>
                     </div>
@@ -75,8 +75,8 @@ export const AiSection: React.FC = () => {
                     </TextBlock>
 
                     {/* ACHIEVEMENT HIGHLIGHT */}
-                    <div className="p-3.5 rounded-xl bg-[var(--accent-indigo)]/10 border border-[var(--accent-indigo)]/20 space-y-1">
-                      <div className="flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-wider text-[var(--accent-indigo)]">
+                    <div className="p-3 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+                      <div className="flex items-center gap-1.5 text-[10px] uppercase font-mono font-bold tracking-wider text-[var(--accent)]">
                         <Award size={13} />
                         <span>Key Achievement</span>
                       </div>
@@ -86,7 +86,7 @@ export const AiSection: React.FC = () => {
                     </div>
 
                     {/* INTEREST STATEMENT */}
-                    <div className="flex items-start gap-2 text-xs text-[var(--text-secondary)] font-medium pt-2">
+                    <div className="flex items-start gap-2 text-xs text-[var(--text-secondary)] font-medium pt-2 border-t border-[var(--border-subtle)]">
                       <Heart size={14} className="text-[var(--accent)] mt-0.5 shrink-0" />
                       <span>
                         <strong className="text-[var(--text-primary)]">Core Interest:</strong> {item.interest}

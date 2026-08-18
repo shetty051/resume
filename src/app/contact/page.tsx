@@ -60,19 +60,19 @@ export default function ContactPage() {
             href={studioConfig.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -3 }}
             className="group"
           >
-            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] border-t-4 border-t-[#0A66C2]">
+            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] border-[var(--border-subtle)] hover:border-[var(--accent)] transition-all duration-200 border-t-2 border-t-[#0A66C2]">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#0A66C2]/15 text-[#0A66C2] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Share2 size={24} />
+                <div className="w-10 h-10 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[#0A66C2] flex items-center justify-center">
+                  <Share2 size={20} />
                 </div>
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#0A66C2]">
                     PROFESSIONAL NETWORK
                   </span>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-xl font-display font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
                     LinkedIn
                   </h3>
                 </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-mono font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
                 <span>linkedin.com/in/aakash-b-shetty</span>
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
@@ -93,19 +93,19 @@ export default function ContactPage() {
             href={studioConfig.github}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -3 }}
             className="group"
           >
-            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] border-t-4 border-t-[var(--text-primary)]">
+            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] border-[var(--border-subtle)] hover:border-[var(--accent)] transition-all duration-200 border-t-2 border-t-[var(--text-primary)]">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <GitBranch size={24} />
+                <div className="w-10 h-10 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] flex items-center justify-center">
+                  <GitBranch size={20} />
                 </div>
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--text-muted)]">
                     CODE REPOSITORIES
                   </span>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-xl font-display font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
                     GitHub
                   </h3>
                 </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-mono font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
                 <span>github.com/shetty051</span>
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
@@ -124,19 +124,19 @@ export default function ContactPage() {
           {/* EMAIL CARD */}
           <motion.a
             href={`mailto:${studioConfig.email}`}
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -3 }}
             className="group"
           >
-            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] transition-all duration-300 shadow-[var(--shadow-layered)] border-t-4 border-t-[var(--accent)]">
+            <Card className="h-full flex flex-col justify-between space-y-6 bg-[var(--bg-card)] border-[var(--border-subtle)] hover:border-[var(--accent)] transition-all duration-200 border-t-2 border-t-[var(--accent)]">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail size={24} />
+                <div className="w-10 h-10 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--accent)] flex items-center justify-center">
+                  <Mail size={20} />
                 </div>
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--accent)]">
                     DIRECT INQUIRY
                   </span>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-xl font-display font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
                     Send Email
                   </h3>
                 </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs font-mono font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)]">
                 <span className="truncate">{studioConfig.email}</span>
                 <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0 ml-1" />
               </div>
@@ -155,9 +155,9 @@ export default function ContactPage() {
 
         {/* ADDITIONAL DETAILS BAR (PHONE & LOCATION) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-          <Card hoverEffect={false} className="flex items-center gap-4 bg-[var(--bg-secondary)]/50">
-            <div className="p-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--accent)]">
-              <Phone size={20} />
+          <Card hoverEffect={false} className="flex items-center gap-4 bg-[var(--bg-secondary)]">
+            <div className="p-2.5 bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--accent)]">
+              <Phone size={18} />
             </div>
             <div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--text-muted)] font-bold block">
@@ -165,22 +165,22 @@ export default function ContactPage() {
               </span>
               <a
                 href={`tel:${studioConfig.phone}`}
-                className="text-base font-bold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+                className="text-sm font-mono font-bold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
               >
                 +91 {studioConfig.phone}
               </a>
             </div>
           </Card>
 
-          <Card hoverEffect={false} className="flex items-center gap-4 bg-[var(--bg-secondary)]/50">
-            <div className="p-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--accent)]">
-              <MapPin size={20} />
+          <Card hoverEffect={false} className="flex items-center gap-4 bg-[var(--bg-secondary)]">
+            <div className="p-2.5 bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--accent)]">
+              <MapPin size={18} />
             </div>
             <div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--text-muted)] font-bold block">
                 Studio Location
               </span>
-              <p className="text-base font-bold text-[var(--text-primary)]">
+              <p className="text-sm font-mono font-bold text-[var(--text-primary)]">
                 {studioConfig.location}
               </p>
             </div>
